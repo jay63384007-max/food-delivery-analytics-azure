@@ -1,6 +1,29 @@
 {
 	"name": "pl_load_food_delivery",
 	"properties": {
+		"parameters": {
+			"tables": {
+				"type": "array",
+				"defaultValue": [
+					{
+						"file": "customers.csv",
+						"table": "stg_customers"
+					},
+					{
+						"file": "restaurants.csv",
+						"table": "stg_restaurants"
+					},
+					{
+						"file": "food_orders.csv",
+						"table": "stg_orders"
+					},
+					{
+						"file": "delivery.csv",
+						"table": "stg_delivery"
+					}
+				]
+			}
+		},
 		"annotations": []
 	}
 }
