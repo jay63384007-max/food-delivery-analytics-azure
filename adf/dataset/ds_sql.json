@@ -16,7 +16,7 @@
 		"schema": [],
 		"typeProperties": {
 			"schema": "dbo",
-			"table": "stg_customers"
+			"table": "@dataset().tableName"
 		}
 	}
 }
