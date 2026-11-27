@@ -43,7 +43,7 @@
 			"properties": {
 				"activities": [
 					{
-						"name": "ForEach1",
+						"name": "ForEach_Tables",
 						"type": "ForEach",
 						"dependsOn": [],
 						"userProperties": [],
@@ -80,7 +80,10 @@
 										},
 										"sink": {
 											"type": "AzureSqlSink",
-											"preCopyScript": "TRUNCATE TABLE dbo.@{item().table}",
+											"preCopyScript": {
+												"value": "TRUNCATE TABLE dbo.@{item().table}",
+												"type": "Expression"
+											},
 											"writeBehavior": "insert",
 											"sqlWriterUseTableLock": false,
 											"disableMetricsCollection": false
@@ -122,6 +125,33 @@
 								}
 							]
 						}
+					},
+					{
+						"name": "Load_Star_Schema",
+						"type": "SqlServerStoredProcedure",
+						"dependsOn": [
+							{
+								"activity": "ForEach_Tables",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
+						"policy": {
+							"timeout": "0.12:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"storedProcedureName": "[[dbo].[usp_load_star_schema]"
+						},
+						"linkedServiceName": {
+							"referenceName": "ls_sql",
+							"type": "LinkedServiceReference"
+						}
 					}
 				],
 				"policy": {
@@ -153,6 +183,7 @@
 				"annotations": []
 			},
 			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/ls_sql')]",
 				"[concat(variables('factoryId'), '/datasets/ds_csv')]",
 				"[concat(variables('factoryId'), '/datasets/ds_sql')]"
 			]
