@@ -1,6 +1,21 @@
 {
 	"name": "pl_load_food_delivery",
 	"properties": {
+		"activities": [
+			{
+				"name": "ForEach_Tables",
+				"type": "ForEach",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@pipeline().parameters.tables",
+						"type": "Expression"
+					},
+					"isSequential": true
+				}
+			}
+		],
 		"parameters": {
 			"tables": {
 				"type": "array",
