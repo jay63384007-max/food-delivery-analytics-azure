@@ -1,0 +1,27 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "adf-fooddelivery-3005"
+		},
+		"ls_storage_accountKey": {
+			"value": ""
+		},
+		"ls_sql_password": {
+			"value": ""
+		},
+		"ls_storage_properties_typeProperties_url": {
+			"value": "https://stfooddeliverydev3005.dfs.core.windows.net/"
+		},
+		"ls_sql_properties_typeProperties_server": {
+			"value": "sql-fooddelivery-dev-3005.database.windows.net"
+		},
+		"ls_sql_properties_typeProperties_database": {
+			"value": "sqldb-fooddelivery-dev"
+		},
+		"ls_sql_properties_typeProperties_userName": {
+			"value": "sqladmin"
+		}
+	}
+}
