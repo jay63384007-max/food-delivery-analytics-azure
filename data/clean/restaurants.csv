@@ -1,0 +1,13 @@
+restaurant_id,restaurant_name,city,cuisine
+R001,Restaurant 1,Ahmedabad,Cafe
+R002,Restaurant 2,Mumbai,Pizza
+R003,Restaurant 3,Ahmedabad,Indian
+R004,Restaurant 4,Ahmedabad,Chinese
+R005,Restaurant 5,Ahmedabad,Indian
+R006,Restaurant 6,Ahmedabad,Indian
+R007,Restaurant 7,Pune,Indian
+R008,Restaurant 8,Pune,Chinese
+R009,Restaurant 9,Pune,Cafe
+R010,Restaurant 10,Pune,Pizza
+R011,Restaurant 11,Mumbai,Indian
+R012,Restaurant 12,Mumbai,Indian
