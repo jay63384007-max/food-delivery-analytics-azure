@@ -7,17 +7,13 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "adf-fooddelivery-3005"
 		},
-		"ls_storage_accountKey": {
-			"type": "secureString",
-			"metadata": "Secure string for 'accountKey' of 'ls_storage'"
-		},
 		"ls_sql_password": {
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'ls_sql'"
 		},
-		"ls_storage_properties_typeProperties_url": {
-			"type": "string",
-			"defaultValue": "https://stfooddeliverydev3005.dfs.core.windows.net/"
+		"ls_storage_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'ls_storage'"
 		},
 		"ls_sql_properties_typeProperties_server": {
 			"type": "string",
@@ -30,6 +26,10 @@
 		"ls_sql_properties_typeProperties_userName": {
 			"type": "string",
 			"defaultValue": "sqladmin"
+		},
+		"ls_storage_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://stfooddeliverydev3005.dfs.core.windows.net/"
 		},
 		"containerUri": {
 			"type": "string",
@@ -58,14 +58,11 @@
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
 					},
-					"ls_storage_accountKey": {
-						"value": "[parameters('ls_storage_accountKey')]"
-					},
 					"ls_sql_password": {
 						"value": "[parameters('ls_sql_password')]"
 					},
-					"ls_storage_properties_typeProperties_url": {
-						"value": "[parameters('ls_storage_properties_typeProperties_url')]"
+					"ls_storage_accountKey": {
+						"value": "[parameters('ls_storage_accountKey')]"
 					},
 					"ls_sql_properties_typeProperties_server": {
 						"value": "[parameters('ls_sql_properties_typeProperties_server')]"
@@ -75,6 +72,9 @@
 					},
 					"ls_sql_properties_typeProperties_userName": {
 						"value": "[parameters('ls_sql_properties_typeProperties_userName')]"
+					},
+					"ls_storage_properties_typeProperties_url": {
+						"value": "[parameters('ls_storage_properties_typeProperties_url')]"
 					}
 				}
 			},
